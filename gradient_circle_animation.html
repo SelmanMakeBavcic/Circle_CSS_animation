@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gradient circle animation</title>
+	<style>
+
+	#box{
+		height: 600px;
+		width: 600px;
+		background-color:#050210;
+		margin: 0 auto;
+	}
+
+	#blur-circle{
+		position: absolute;
+		height: 400px;
+		width: 400px;
+		background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+		border-radius: 100%;
+		margin: 100px 100px;
+
+
+		animation-name: circle;
+		animation-duration: 1s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+		filter: blur(50px);
+	}
+
+	#circle{
+		position: absolute;
+		width: 360px;
+		height: 360px;
+		border-radius: 100%;
+		background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+		margin: 120px 120px;
+
+		animation-name: circle;
+		animation-duration: 1s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+	}
+
+	#inner-circle{
+		position: absolute;
+		width: 320px;
+		height: 320px;
+		border-radius: 100%;
+		margin: 140px 140px;
+		background-color:#050210;
+	}
+
+	#innercircle::after{
+		content: "";
+		position: absolute;
+		width: 30px;
+		height: 30px;
+		background-color: #120f1c;
+		border-radius: 100%;
+		margin: 145px 145px;
+
+		animation-name: innercircle;
+		animation-duration: 1.5s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear ease;
+	}
+
+	@keyframes circle {
+		0% {
+			transform: rotate(0deg);
+		}
+
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+
+	@keyframes circle {
+		0% {
+			transform: rotate(0deg);
+		}
+
+		100% {
+			transform: rotate(360deg);
+		}
+	}
+
+	@keyframes innercircle {
+		0% {
+			transform: scale(1.0);
+		}
+
+		100% {
+			transform: scale(10.0);
+		}
+	}
+
+	</style>
+</head>
+<body>
+
+<div id="box">
+
+	<div id="blur-circle"></div>
+		
+		<div id="circle"></div>
+			
+			<div id="inner-circle"></div>
+
+</div>
+
+</body>
+</html>
